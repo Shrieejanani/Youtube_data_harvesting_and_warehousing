@@ -27,7 +27,7 @@ st.subheader(":violet[Fetching data and push to MongoDB Database] ")
 
 
 @st.cache_data
-def channel_statistics(_youtube, channel_ids):
+def channel_statistics(youtube, channel_ids):
     all_data = []
     request = youtube.channels().list(
         part="snippet,contentDetails,statistics",
@@ -60,7 +60,7 @@ def get_playlist_data(df):
 # Function to get video ids:
 
 @st.cache_data
-def get_video_ids(_youtube, playlist_id_data):
+def get_video_ids(youtube, playlist_id_data):
     video_id = []
 
     for i in playlist_id_data:
@@ -87,7 +87,7 @@ def get_video_ids(_youtube, playlist_id_data):
 # Function to get Video details:
 
 @st.cache_data
-def get_video_details(_youtube, video_id):
+def get_video_details(youtube, video_id):
     global format_date
     all_video_stats = []
 
@@ -123,7 +123,7 @@ def get_video_details(_youtube, video_id):
 # Function to get comment details
 
 @st.cache_data
-def get_comments(_youtube, video_ids):
+def get_comments(youtube, video_ids):
     comments_data = []
     try:
         next_page_token = None
