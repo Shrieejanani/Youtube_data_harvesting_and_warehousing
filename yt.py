@@ -17,7 +17,7 @@ st.set_page_config(page_title="Youtube Data harvesting and Warehousing", page_ic
 
 st.title(":green[YouTube Data Scraping and Warehousing]")
 
-API_KEY = "AIzaSyC07dqyn7KUkWZz2Kx4WHKJRfNKKm0zVPY"
+API_KEY = "<Your-API>"
 youtube = build('youtube', 'v3', developerKey=API_KEY)
 
 st.subheader(":violet[Fetching data and push to MongoDB Database] ")
@@ -167,7 +167,7 @@ submit = st.button("Upload to MongoDB Database")
 
 # MongoDB Connection
 janani = pg.MongoClient(
-    "mongodb://janani:jananispark@ac-s8tip5l-shard-00-00.iagoq8n.mongodb.net:27017,ac-s8tip5l-shard-00-01.iagoq8n.mongodb.net:27017,ac-s8tip5l-shard-00-02.iagoq8n.mongodb.net:27017/?ssl=true&replicaSet=atlas-e8jc7c-shard-0&authSource=admin&retryWrites=true&w=majority")
+    "mongodb://janani:<YOUR_PASSWORD>@ac-s8tip5l-shard-00-00.iagoq8n.mongodb.net:27017,ac-s8tip5l-shard-00-01.iagoq8n.mongodb.net:27017,ac-s8tip5l-shard-00-02.iagoq8n.mongodb.net:27017/?ssl=true&replicaSet=atlas-e8jc7c-shard-0&authSource=admin&retryWrites=true&w=majority")
 
 # Creating database
 db = janani["Youtube_Database"]
@@ -275,7 +275,7 @@ if submit1:
             host="localhost",
             port=3306,
             user="root",
-            password="6699",
+            password="<Password>",
             database="youtube_data_warehousing",
             auth_plugin="mysql_native_password")
 
